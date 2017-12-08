@@ -1,0 +1,11 @@
+Run make to compile java files.
+
+./server1.sh
+./server2.sh
+./server3.sh
+to start three servers.
+
+The program use java scanner to receive system input.
+
+in terminal run server1, input "like" to like the post from process 1,
+input "read" to read the post from process 1.

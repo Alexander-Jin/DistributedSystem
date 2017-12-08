@@ -1,0 +1,35 @@
+Run 
+$ make
+to compile java files.
+
+./server1.sh
+./server2.sh
+./server3.sh
+to start three servers.
+
+The program use java scanner to receive system input.
+
+input "s" to start snapshot on a certain server. I use "s" instead of "snapshot" because input "s" takes less time and won't be interrupted by messages of the server.
+
+Each snapshot is associated with a decimal number to indicate which snapshot it is. For instance, 
+In server1, it may contain following message:
+snapshot 0.10 (in channels + process) for process 1, 1021
+snapshot 0.20 (in channels + process) for process 1, 1000
+snapshot 0.30 (in channels + process) for process 1, 1001
+
+In server2, it is 
+snapshot 0.10 (in channels + process) for process 2, 999
+snapshot 0.30 (in channels + process) for process 2, 1001
+snapshot 0.20 (in channels + process) for process 2, 1000
+
+In server3, it is 
+snapshot 0.20 (in channels + process) for process 3, 1000
+snapshot 0.10 (in channels + process) for process 3, 980
+snapshot 0.30 (in channels + process) for process 3, 998
+
+So the snapshot 0.10 on three servers are 1021, 999, 980, sum to 3000
+the snapshot 0.20 on three servers are 1000, 1000, 1000, sum to 3000
+the snapshot 0.30 on three servers are 1001, 1001, 998, sum to 3000
+
+I also provides messages of separate snapshots on process and input channels for each server. 
+
